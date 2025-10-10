@@ -6,10 +6,10 @@
 #include "CommonInputBaseTypes.h"
 #include "ControllerInputData.generated.h"
 
-UCLASS()
+UCLASS(BlueprintType) 
 class UEMOVEMENTSYSTEM_API UControllerInputData : public UDataAsset
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Controller Info")
@@ -21,18 +21,7 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Icons")
     TMap<FName, TObjectPtr<UTexture2D>> ButtonIcons;
 
-    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Icons")
-    TObjectPtr<UTexture2D> ButtonA;
-
-    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Icons")
-    TObjectPtr<UTexture2D> ButtonB;
-
-    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Icons")
-    TObjectPtr<UTexture2D> ButtonX;
-
-    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Icons")
-    TObjectPtr<UTexture2D> ButtonY;
-
     UFUNCTION(BlueprintCallable, Category = "Controller Input")
     UTexture2D* GetButtonIcon(FName ButtonName) const;
+
 };
