@@ -45,6 +45,16 @@ void APlayerControllerCharacter::DebugPrint(const FString& Message)
 	);
 }
 
+void APlayerControllerCharacter::DebugEnable()
+{
+	OnDebugEnable.Broadcast();
+}
+
+void APlayerControllerCharacter::DebugDisable()
+{
+	OnDebugDisable.Broadcast();
+}
+
 /*===============================================*/
 
 
